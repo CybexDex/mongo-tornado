@@ -60,16 +60,21 @@ class accountHandler(web.RequestHandler):
 	req = '{"id": 3, "method": "call", "params": [2, "get_account_history", [ "%s" ,"1.11.0", %d , "1.11.0"]]}' % (account_name , limit)
 	print req
 	ws.send(req, opcode=websocket.ABNF.OPCODE_TEXT)
-	res = ws.recv()
-	self.write("\n--------------------------------------pending in node----------------------------------------\n")
-	self.write(res)
+	res = json.loads(ws.recv())
+	# self.write("\n--------------------------------------pending in node----------------------------------------\n")
+	# self.write(res)
         ws.close()
+	return res
     def get(self,account_name):
         account_history = db.account_history.find({'account_history.account':account_name}).sort([('block_data.block_num',-1)] ).limit(100)
         self.set_header("Content-Type", "application/json")
-	self.pending(account_name, 100)
-	self.write("\n--------------------------------------lib in mongo----------------------------------------\n")
-        self.write(json.dumps(list(account_history),default=json_util.default))
+	pending_res = self.pending(account_name, 100)
+	# self.write("\n--------------------------------------lib in mongo----------------------------------------\n")
+        res = {}
+	res['pending_in_node'] = pending_res
+	res['lib_in_mongo'] = list(account_history)
+	# self.write(json.dumps(list(account_history),default=json_util.default))
+	self.write(json.dumps(res , default=json_util.default))
     # def post(self,account_name, _skip, _limit):
     def post(self, account_name , *args, **kwargs):
 	# print self.request
@@ -79,9 +84,13 @@ class accountHandler(web.RequestHandler):
         account_history = db.account_history.find({'account_history.account':account_name}).sort([('block_data.block_num',-1)] ).skip(_skip).limit(_limit)
         # account_history = db.account_history.find({'account_history.account':account_name}).sort({'account_history.account':-1} ).skip(_skip).limit(_limit)
         self.set_header("Content-Type", "application/json")
-	self.pending(account_name, 100)
-	self.write("\n--------------------------------------lib in mongo----------------------------------------\n")
-        self.write(json.dumps(list(account_history),default=json_util.default))
+	pending_res = self.pending(account_name, 100)
+	res = {}
+	res['pending_in_node'] = pending_res
+	res['lib_in_mongo'] = list(account_history)
+	# self.write("\n--------------------------------------lib in mongo----------------------------------------\n")
+        # self.write(json.dumps(list(account_history),default=json_util.default))
+        self.write(json.dumps(res ,default=json_util.default))
         
 
 
