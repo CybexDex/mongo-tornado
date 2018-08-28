@@ -990,21 +990,131 @@
 
 # proposal_create_operation (op_id : 22)
 ```
-
+{
+	"_id": ObjectId("5b7ba6d555ef33729d070624"),
+	"account_history": {
+		"id": "2.9.82",
+		"account": "1.2.29",
+		"operation_id": "1.11.37",
+		"sequence": 6,
+		"next": "2.9.78"
+	},
+	"operation_history": {
+		"trx_in_block": 0,
+		"op_in_trx": 0,
+		"operation_result": "[1,\"1.10.0\"]",
+		"virtual_op": 114,
+		"op": "[22,{\"fee\":{\"amount\":8555,\"asset_id\":\"1.3.0\"},\"fee_paying_account\":\"1.2.29\",\"expiration_time\":\"2018-02-26T21:18:15\",\"proposed_ops\":[{\"op\":[0,{\"fee\":{\"amount\":1000,\"asset_id\":\"1.3.0\"},\"from\":\"1.2.32\",\"to\":\"1.2.30\",\"amount\":{\"amount\":150000,\"asset_id\":\"1.3.0\"},\"extensions\":[[1,{\"vesting_period\":120,\"public_key\":\"CYB6X9MW8fmvZn1gvsPrDF8UCa7r3ovwNFj2BpCkYVLdQcfoYkwgt\"}]]}]}],\"extensions\":[]}]"
+	},
+	"operation_type": 22,
+	"block_data": {
+		"block_num": 877,
+		"block_time": "2018-02-25T21:18:42",
+		"trx_id": "d70b767c0a76deed0ef741c5ef8d5c23b6a3daf1"
+	},
+	"additional_data": {
+		"fee_data": {
+			"asset": "1.3.0",
+			"amount": 0
+		},
+		"transfer_data": {
+			"asset": "1.3.0",
+			"amount": 0,
+			"from": "1.2.0",
+			"to": "1.2.0"
+		}
+	}
+}
 ```
 * op format
 ```
-
+{
+	"fee": {
+		"amount": 8555,
+		"asset_id": "1.3.0"
+	},
+	"fee_paying_account": "1.2.29",
+	"expiration_time": "2018-02-26T21:18:15",
+	"proposed_ops": [{
+		"op": [0, {
+			"fee": {
+				"amount": 1000,
+				"asset_id": "1.3.0"
+			},
+			"from": "1.2.32",
+			"to": "1.2.30",
+			"amount": {
+				"amount": 150000,
+				"asset_id": "1.3.0"
+			},
+			"extensions": [
+				[1, {
+					"vesting_period": 120,
+					"public_key": "CYB6X9MW8fmvZn1gvsPrDF8UCa7r3ovwNFj2BpCkYVLdQcfoYkwgt"
+				}]
+			]
+		}]
+	}],
+	"extensions": []
+}
 ```
 
 
 # proposal_update_operation (op_id : 23)
 ```
-
+{
+	"_id": ObjectId("5b7ba6d555ef33729d070626"),
+	"account_history": {
+		"id": "2.9.84",
+		"account": "1.2.31",
+		"operation_id": "1.11.38",
+		"sequence": 8,
+		"next": "2.9.80"
+	},
+	"operation_history": {
+		"trx_in_block": 0,
+		"op_in_trx": 0,
+		"operation_result": "[0,{}]",
+		"virtual_op": 115,
+		"op": "[23,{\"fee\":{\"amount\":284,\"asset_id\":\"1.3.0\"},\"fee_paying_account\":\"1.2.31\",\"proposal\":\"1.10.0\",\"active_approvals_to_add\":[\"1.2.31\"],\"active_approvals_to_remove\":[],\"owner_approvals_to_add\":[],\"owner_approvals_to_remove\":[],\"key_approvals_to_add\":[],\"key_approvals_to_remove\":[],\"extensions\":[]}]"
+	},
+	"operation_type": 23,
+	"block_data": {
+		"block_num": 893,
+		"block_time": "2018-02-25T21:19:30",
+		"trx_id": "174ca0b0780778b43981348904bc36287e7d5c35"
+	},
+	"additional_data": {
+		"fee_data": {
+			"asset": "1.3.0",
+			"amount": 0
+		},
+		"transfer_data": {
+			"asset": "1.3.0",
+			"amount": 0,
+			"from": "1.2.0",
+			"to": "1.2.0"
+		}
+	}
+}
 ```
 * op format
 ```
-
+{
+	"fee": {
+		"amount": 284,
+		"asset_id": "1.3.0"
+	},
+	"fee_paying_account": "1.2.31",
+	"proposal": "1.10.0",
+	"active_approvals_to_add": ["1.2.31"],
+	"active_approvals_to_remove": [],
+	"owner_approvals_to_add": [],
+	"owner_approvals_to_remove": [],
+	"key_approvals_to_add": [],
+	"key_approvals_to_remove": [],
+	"extensions": []
+}
 ```
 
 
