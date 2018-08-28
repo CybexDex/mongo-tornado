@@ -1,3 +1,4 @@
+
 # transfer_operation (op_id : 0)
 
 ```
@@ -789,31 +790,171 @@
 
 # asset_fund_fee_pool_operation (op_id : 16)
 ```
-
+{
+	"_id": ObjectId("5b7ba72e55ef33729d07503e"),
+	"account_history": {
+		"id": "2.9.19052",
+		"account": "1.2.29",
+		"operation_id": "1.11.9722",
+		"sequence": 106,
+		"next": "2.9.18935"
+	},
+	"operation_history": {
+		"trx_in_block": 0,
+		"op_in_trx": 0,
+		"operation_result": "[0,{}]",
+		"virtual_op": 9801,
+		"op": "[16,{\"fee\":{\"amount\":27778,\"asset_id\":\"1.3.0\"},\"from_account\":\"1.2.29\",\"asset_id\":\"1.3.2\",\"amount\":100000000,\"extensions\":[]}]"
+	},
+	"operation_type": 16,
+	"block_data": {
+		"block_num": 202814,
+		"block_time": "2018-03-05T06:39:06",
+		"trx_id": "e6c03c398c87a7bd4b57cf9984d9bf403707e73c"
+	},
+	"additional_data": {
+		"fee_data": {
+			"asset": "1.3.0",
+			"amount": 0
+		},
+		"transfer_data": {
+			"asset": "1.3.0",
+			"amount": 0,
+			"from": "1.2.0",
+			"to": "1.2.0"
+		}
+	}
+}
 ```
 * op format
 ```
-
+{
+	"fee": {
+		"amount": 27778,
+		"asset_id": "1.3.0"
+	},
+	"from_account": "1.2.29",
+	"asset_id": "1.3.2",
+	"amount": 100000000,
+	"extensions": []
+}
 ```
 
 
 # asset_settle_operation (op_id : 17)
 ```
-
+{
+	"_id": ObjectId("5b7bc07e55ef33729dadf36c"),
+	"account_history": {
+		"id": "2.9.10939802",
+		"account": "1.2.31451",
+		"operation_id": "1.11.10849698",
+		"sequence": 12,
+		"next": "2.9.10939410"
+	},
+	"operation_history": {
+		"trx_in_block": 4,
+		"op_in_trx": 0,
+		"operation_result": "[2,{\"amount\":1000000,\"asset_id\":\"1.3.0\"}]",
+		"virtual_op": 36350,
+		"op": "[17,{\"fee\":{\"amount\":2777,\"asset_id\":\"1.3.0\"},\"account\":\"1.2.31451\",\"amount\":{\"amount\":1000000,\"asset_id\":\"1.3.54\"},\"extensions\":[]}]"
+	},
+	"operation_type": 17,
+	"block_data": {
+		"block_num": 2968142,
+		"block_time": "2018-06-09T12:16:54",
+		"trx_id": "a2ade9fd1182a0b7c2586be4150e45d3bac03dfd"
+	},
+	"additional_data": {
+		"fee_data": {
+			"asset": "1.3.0",
+			"amount": 0
+		},
+		"transfer_data": {
+			"asset": "1.3.0",
+			"amount": 0,
+			"from": "1.2.0",
+			"to": "1.2.0"
+		}
+	}
+}
 ```
 * op format
 ```
-
+{
+	"fee": {
+		"amount": 2777,
+		"asset_id": "1.3.0"
+	},
+	"account": "1.2.31451",
+	"amount": {
+		"amount": 1000000,
+		"asset_id": "1.3.54"
+	},
+	"extensions": []
+}
 ```
 
 
 # asset_global_settle_operation (op_id : 18)
 ```
-
+{
+	"_id": ObjectId("5b7bc07d55ef33729dadf1e0"),
+	"account_history": {
+		"id": "2.9.10939406",
+		"account": "1.2.31980",
+		"operation_id": "1.11.10849302",
+		"sequence": 102,
+		"next": "2.9.10933976"
+	},
+	"operation_history": {
+		"trx_in_block": 4,
+		"op_in_trx": 0,
+		"operation_result": "[0,{}]",
+		"virtual_op": 35954,
+		"op": "[18,{\"fee\":{\"amount\":277784,\"asset_id\":\"1.3.0\"},\"issuer\":\"1.2.31980\",\"asset_to_settle\":\"1.3.47\",\"settle_price\":{\"base\":{\"amount\":1,\"asset_id\":\"1.3.47\"},\"quote\":{\"amount\":0,\"asset_id\":\"1.3.0\"}},\"extensions\":[]}]"
+	},
+	"operation_type": 18,
+	"block_data": {
+		"block_num": 2968124,
+		"block_time": "2018-06-09T12:16:00",
+		"trx_id": "3c397afde2a5d1b992da54b9e79354b46a75bd70"
+	},
+	"additional_data": {
+		"fee_data": {
+			"asset": "1.3.0",
+			"amount": 0
+		},
+		"transfer_data": {
+			"asset": "1.3.0",
+			"amount": 0,
+			"from": "1.2.0",
+			"to": "1.2.0"
+		}
+	}
+}
 ```
 * op format
 ```
-
+{
+	"fee": {
+		"amount": 277784,
+		"asset_id": "1.3.0"
+	},
+	"issuer": "1.2.31980",
+	"asset_to_settle": "1.3.47",
+	"settle_price": {
+		"base": {
+			"amount": 1,
+			"asset_id": "1.3.47"
+		},
+		"quote": {
+			"amount": 0,
+			"asset_id": "1.3.0"
+		}
+	},
+	"extensions": []
+}
 ```
 
 
