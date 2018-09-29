@@ -102,16 +102,22 @@
 * op format:
 ```
 {
-	{
+	"fee": {
 		"amount": 55,
 		"asset_id": "1.3.0"
-	}, "seller": "1.2.368", "amount_to_sell": {
+	},
+	"seller": "1.2.368",
+	"amount_to_sell": {
 		"amount": 100000,
 		"asset_id": "1.3.0"
-	}, "min_to_receive": {
+	},
+	"min_to_receive": {
 		"amount": 1000000,
 		"asset_id": "1.3.2"
-	}, "expiration": "2023-02-26T11:54:25", "fill_or_kill": false, "extensions": []
+	},
+	"expiration": "2023-02-26T11:54:25",
+	"fill_or_kill": false,
+	"extensions": []
 }
 
 ```
